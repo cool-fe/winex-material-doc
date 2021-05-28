@@ -1,0 +1,33 @@
+{
+  "name": "winex-material-doc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "commit": "git-cz"
+  },
+  "keywords": [
+    "vuepress",
+    "winex",
+    "material",
+    "doc"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": "https://github.com/cool-fe/winex-material-doc.git",
+  "author": "huzhiwei <405163706@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "commitizen": "^4.2.3",
+    "conventional-changelog-cli": "^2.1.1",
+    "husky": "^6.0.0"
+  }
+}
