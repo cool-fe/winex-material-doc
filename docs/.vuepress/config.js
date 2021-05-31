@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/winex-material-doc/guides/", //部署站点基础路径
+  base: "/winex-material-doc/", //部署站点基础路径
   title: "WiNex物料文档(v1.0.0-beta)",
   description: "welcome",
   head: [
@@ -13,7 +13,7 @@ module.exports = {
       // {text: 'Home', link: '/'}
     ],
     sidebar: {
-      "/": [
+      "/guides/": [
         {
           title: "开始",
           collapsable: false,
