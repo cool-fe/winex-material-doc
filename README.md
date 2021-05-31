@@ -6,8 +6,14 @@
 
 ```
 $ npm install   # or yarn
-$ npm run serve # or yarn serve
-# 开发服务器地址为 http://localhost:8080
+$ npm run dev # or yarn dev
+# 开发服务器地址为 http://localhost:8080/winex-material-doc/guides/
+```
+
+提交代码后,执行如下代码，会同步修改到线上文档中
+
+```
+npm run deploy
 ```
 
 ## 参与
