@@ -3,7 +3,7 @@
 WINEX 物料数据协议是一套通用的描述物料元数据的标准格式，协议约定了物料的类型、名称、物料数据、存储位置等信息，通过这套数据协议，用户可以将自己开发的物料接入 winex-cli 方便使用。
 ​
 
-## 物料数据结构
+### 物料数据结构
 
 物料在开发完成时，每次发布之前需要重新生成该仓库中物料信息，在根目录 material.json 中，关键数据结构有：
 
@@ -28,7 +28,7 @@ WINEX 物料数据协议是一套通用的描述物料元数据的标准格式�
 ]
 ```
 
-## ComponentMetaData 组件元数据
+### ComponentMetaData 组件元数据
 
 ```javascript
 {
@@ -68,7 +68,7 @@ WINEX 物料数据协议是一套通用的描述物料元数据的标准格式�
 }
 ```
 
-## BlockMetaData 区块元数据
+### BlockMetaData 区块元数据
 
 ```javascript
 {
@@ -114,7 +114,7 @@ WINEX 物料数据协议是一套通用的描述物料元数据的标准格式�
 }
 ```
 
-## PageMetaData 页面元数据
+### PageMetaData 页面元数据
 
 ```javascript
 {
@@ -160,7 +160,7 @@ WINEX 物料数据协议是一套通用的描述物料元数据的标准格式�
 }
 ```
 
-## ScaffoldMetaData 项目模板元数据
+### ScaffoldMetaData 项目模板元数据
 
 ```javascript
 {
