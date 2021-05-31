@@ -1,6 +1,6 @@
 module.exports = {
   base: "/winex-material-doc/", //部署站点基础路径
-  title: "WiNex物料文档(v1.0.0-beta.0)",
+  title: "WiNex物料文档(v1.0.0-beta)",
   description: "welcome",
   head: [
     // 额外需要被注入到当前页面的HTML<head>中的标签
@@ -26,6 +26,10 @@ module.exports = {
             "material-init",
             "material-component",
             "material-scaffold",
+            "material-block",
+            "material-page",
+            "material-generate",
+            "material-upload",
           ],
         },
       ],

@@ -73,10 +73,12 @@ or
 yarn add @winfe/fire-cli -g
 ```
 
-然后通过
+然后通过`fire init`指令在当前目录下生成物料开发模板。
 
 ```javascript
 fire init
 ```
 
 在当前目录下初始化开发模板。
+
+PS：目前这块还需完善，待定...
