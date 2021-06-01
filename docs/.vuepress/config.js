@@ -30,6 +30,7 @@ module.exports = {
             "material-page",
             "material-generate",
             "material-upload",
+            "material-use",
           ],
         },
       ],
