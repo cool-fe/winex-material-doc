@@ -1,10 +1,14 @@
 # 物料数据生成
 
-在完成所有的物料开发和发布后，需要生成这个物料的集合的物料数据，生成物料数据只需要在物料模板的根目录下执行:
+在完成所有的物料`开发和发布后`，需要生成这个物料的集合的物料数据，生成物料数据只需要在物料模板的根目录下执行:
 
 ```
 npm run generate
 ```
+
+如下：
+
+![image.png](/winex-material-doc/generate-material.png)
 
 该命令目前是通过`iceworks generate`生成结构化的数据然后存储到`build/material.json`中。
 

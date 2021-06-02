@@ -26,7 +26,7 @@ $ mkdir lib src
     │   └── wn-pic.vue    // 组件开发
 ```
 
-修改初始化修改`package.json`如下，至少保留以下这些字段和依赖。然后`npm install` 安装依赖。
+修改初始化修改`package.json`如下，至少保留以下这些字段和依赖。然后`yarn install` 进行安装依赖。
 
 ```json
 {
