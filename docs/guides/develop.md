@@ -2,11 +2,9 @@
 
 ## 安装工具（暂时不推荐使用）
 
-首先推荐通过脚手架的方式去生成物料开发模板，全局安装`fire-cli`:
+首先推荐通过脚手架的方式去生成物料开发模板，推荐使用`yarn`全局安装`fire-cli`:
 
 ```javascript
-npm i @winfe/fire-cli -g
-or
 yarn add @winfe/fire-cli -g
 ```
 
@@ -81,7 +79,7 @@ git clone http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/w
 ```basic
 $ cd components
 $ mkdir wn-title && cd wn-title
-$ npm init -y
+$ yarn init -y
 $ touch index.js README.md
 $ mkdir lib src
 ```

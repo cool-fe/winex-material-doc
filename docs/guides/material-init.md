@@ -10,7 +10,7 @@
 git clone http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-common
 ```
 
-### 修改
+### 配置物料模板信息
 
 拉取代码后，您第一件要做的就是修改项目根目录下的`package.json`，需要修改和保留的字段有`name`,`version`,`description`,`materialConfig`。示例如下：
 
