@@ -1,16 +1,35 @@
 # 物料模板
 
-### TFS 拉取
+### 物料初始化
 
-通过从`TFS`拉取代码，拉取分支为`develop`:
+可以通过我们[@winfe/winex-cli](https://cool-fe.github.io/docs-winex-cli/)提供的 `winex init` 指令去初始化我们物料项目, 首先要安装我们的脚手架：
 
-```git
-git clone http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-common
+```bash
+$ npm install -g @winfe/winex-cli
+# OR
+$ yarn global add @winfe/winex-cli
 ```
+
+然后初始化物料项目：
+
+```bash
+winex init --name my-material-template
+```
+
+初始化后会有如下选择，请分别将：
+
+- Project type 选择`normal`
+- domain 选择 `common`
+- Bussiness type 选择`app_indep`
+- Pick a preset scaffold 选择 `@winexmaterial-scaffolds/wn-material-template`
+
+后面的询问选择可以根据自定义选择了。
+
+![image.png](/winex-material-doc/winex-init-material.png)
 
 ### 物料模板信息
 
-拉取代码后，您第一件要做的就是修改项目根目录下的`package.json`，需要修改和保留的字段有`name`,`version`,`description`,`materialConfig`。示例如下：
+初始化项目后，您第一件要做的就是修改项目根目录下的`package.json`，需要修改和保留的字段有`name`,`version`,`description`,`materialConfig`。示例如下：
 
 ```git
 {
