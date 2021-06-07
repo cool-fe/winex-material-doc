@@ -23,6 +23,7 @@ module.exports = {
           title: "开发指南",
           collapsable: false,
           children: [
+            "material-flow",
             "material-init",
             "material-component",
             "material-scaffold",
@@ -35,7 +36,7 @@ module.exports = {
         {
           title: "扩展",
           collapsable: false,
-          children: ["material-use"],
+          children: ["material-use", "changelog"],
         },
       ],
     },
