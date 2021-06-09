@@ -170,7 +170,7 @@ export default ({ Vue }) => {
 
 <template>
   <container :code="code">
-    <ExampleComp :name="name"></ExampleComp>
+    <ExampleComp :disable="disable"></ExampleComp>
   </container>
 </template>
 <script>
@@ -178,16 +178,16 @@ export default {
   name: "ExampleComp",
   data() {
     return {
-      name: "road",
+      disable: true,
       code: `<template>
-    <ExampleComp :name="name"></ExampleComp>
+    <ExampleComp :disable="disable"></ExampleComp>
 </template>
 <script>
 export default {
   name: "ExampleComp",
   data() {
     return {
-      name: "road",
+      disable:true,
     }
   }
 };
@@ -197,6 +197,22 @@ export default {
 };
 </script>
 
+```
+
+然后在`ExampleComp.md`文档中直接使用该组件：
+
+```md
+// ExampleComp.md
+
+# Example 组件
+
+### 组件基本展示
+
+<ExampleComp />
+
+### 组件禁用展示
+
+<ExampleCompDisable />
 ```
 
 如上，可以看到我们用一个`container`组件进行包裹，这是一个内置的组件，提供了代码展示功能，如下：
