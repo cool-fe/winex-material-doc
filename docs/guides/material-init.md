@@ -1,81 +1,38 @@
-# 物料模板
+# 域物料仓库
 
-### 物料初始化
+## 域物料仓库列表
 
-可以通过我们[@winfe/winex-cli](https://cool-fe.github.io/docs-winex-cli/)提供的 `winex init` 指令去初始化我们物料项目, 首先要安装我们的脚手架：
+域物料仓库，我们已经在仓库中给大家初始化了最基础的开发模板，大家不需要自己再手动进行域物料仓库的搭建。如下表：
 
-```bash
-$ npm install -g @winfe/winex-cli
-# OR
-$ yarn global add @winfe/winex-cli
-```
+| 仓库地址                                                                                                                                  | 仓库名称                   | 权限拥有 |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------- |
+| [MVP-winning-webcomponents-ui](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webcomponents-ui)             | 基础组件库(win design 2.X) | 张丹丹   |
+| [MVP-winning-webmaterials-common](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-common)       | 公共域物料仓库             | 胡至炜   |
+| [MVP-winning-webmaterials-finance](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-finance)     | 费用域物料仓库             | 胡佳亦   |
+| [MVP-winning-webmaterials-encounter](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-encounter) | 就诊域物料仓库             | 桂宇轩   |
+| [MVP-winning-webmaterials-person](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-person)       | 患者域物料仓库             | 桂宇轩   |
+| [MVP-winning-webmaterials-execution](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-execution) | 执行域物料仓库             | 周运徽   |
+| [MVP-winning-webmaterials-clinical](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-clinical)   | 临床域物料仓库             | 韩重阳   |
+| [MVP-winning-webmaterials-record](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-record)       | 记录域物料仓库             | 刘晨辉   |
+| [MVP-winning-webmaterials-material](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-material)   | 物品域物料仓库             | 刘永佳   |
 
-然后初始化物料项目：
+**大家记住这里域的 name 术语（common，finance，encounter，person，execution，clinical，record，material），这些是枚举值大家一定遵守不要拼写错误**
 
-```bash
-winex init --name my-material-template
-```
-
-初始化后会有如下选择，请分别将：
-
-- Project type 选择`normal`
-- domain 选择 `common`
-- Bussiness type 选择`app_indep`
-- Pick a preset scaffold 选择 `@winexmaterial-scaffolds/wn-material-template`
-
-后面的询问选择可以根据自定义选择了。
-
-![image.png](/winex-material-doc/winex-init-material.png)
-
-### 物料模板信息
-
-初始化项目后，您第一件要做的就是修改项目根目录下的`package.json`，需要修改和保留的字段有`name`,`version`,`description`,`materialConfig`。示例如下：
-
-```git
-{
-  "name": "winex-webmaterial-[name]", // name修改成您的域名称：common、finance、clinical、execution、person、encouter、record、knowledge、material
-  "version": "1.0.0", // 版本信息
-  "description": "example物料仓库", // 关于物料仓库的描述
-  "scripts": {
-    // ......
-  },
-  "repository": {
-    // ......
-  },
-  "husky": {
-    // ......
-  },
-  "config": {
-    // ......
-  },
-  "lint-staged": {
-    // ......
-  },
-  "devDependencies": {
-    // ......
-  },
-  "dependencies": {
-    // ......
-  },
-  "materialConfig": {
-    "key": "common", // 您的域名：common、finance、clinical、execution、person、encouter、record、knowledge、material
-    "title": "公共仓库", // 中文域名：公共仓库、费用域、临床域、执行域、患者域、就诊域、记录域、知识域、物品域
-    "registry": "http://172.16.9.242:8081/repository/npm-group",
-    "unpkgHost": "http://172.16.6.51:9000/minio/winex"
-  }
-}
+## 域物料仓库结构
 
 ```
+├── README.md
+├── build   //生成物料数据目录
+├── components    // 业务组件开发目录
+├── docs    // 物料文档
+├── lerna.json    // lerna配置
+├── local   // 提供给文档导入
+├── package.json
+├── scaffolds   // 模板开发目录
+├── scripts
+│   ├── build-entry.js
+│   ├── gen-components.js
+│   ├── release.js  // 发布脚本
+│   └── upload-minio.js
 
-**注意：上面**`materialConfig`**中的**`key`**和**`title`**一定需要分别如下对应**：
-| 标题描述（title） | 域（key） |
-| ----------------- | --------- |
-| 公共仓库 | common |
-| 费用域 | finance |
-| 临床域 | clinical |
-| 执行域 | execution |
-| 患者域 | person |
-| 就诊域 | encounter |
-| 记录域 | record |
-| 知识域 | knowledge |
-| 物品域 | material |
+```

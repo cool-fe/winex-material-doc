@@ -28,6 +28,11 @@ npm run start
 }
 ```
 
+## 模板命名
+
+- 模板的包名：即 package.json 中的 name 名称，按照`@winex-scaffolds/[name]`格式进行命名。`eg:@winex-scaffolds/vue-template`
+- 模板文件夹：按照`短横线分隔 (kebab-case)`进行名。`eg: my-tag`
+
 关于上面的`category`有以下几个类型：
 | category | value |
 | ----------------- | --------- |
