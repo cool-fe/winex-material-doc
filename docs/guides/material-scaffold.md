@@ -8,30 +8,25 @@
 
 ```json
 cd wn-vue2-template
-npm install
-npm run start
+yarn install
+yarn start
 ```
 
 在您的项目模板中的`package.json`文件中，您需要至少保留以下字段。
 
 ```json
 {
-  "name": "@winexmaterial-scaffolds/wn-[name]-template", // name是模板名称
+  "name": "@winex-scaf/[域名]-[模板物料名称]", // name是模板名称
   "version": "0.0.1", // 版本新
   "description": "ui设计的tag组件", // 描述
   "scaffoldConfig": {
-    "name": "@winexmaterial-scaffold/wn-[name]-template", //name是模板名称
+    "name": "@winex-scaf/[域名]-[模板物料名称]", //name是模板名称
     "title": "vue2.x开发模板", // 中文title
     "category": "app_main", // 类型
     "domain": "encounter" // 域
   }
 }
 ```
-
-## 模板命名
-
-- 模板的包名：即 package.json 中的 name 名称，按照`@winex-scaffolds/[name]`格式进行命名。`eg:@winex-scaffolds/vue-template`
-- 模板文件夹：按照`短横线分隔 (kebab-case)`进行名。`eg: my-tag`
 
 关于上面的`category`有以下几个类型：
 | category | value |
@@ -46,10 +41,14 @@ npm run start
 
 ```
 cd wn-vue-template
-npm i
-npm run start
+yarn install
+yarn start
 ```
 
 ## 发布模板
 
-修改版本号后，在当前模板目录下，切换到私有源，然后执行`npm publish`进行发布。
+在模板完成后，进入域物料项目根目录下。首先将本次开发修改的内容提交。然后执行`yarn run release`进行物料的编译和发布：
+
+```shell
+yarn run release
+```
