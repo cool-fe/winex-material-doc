@@ -7,12 +7,14 @@
 ├── src
 │   ├── .vuepress
 │   │  ├── components     //  该目录中的 Vue 组件将会被自动注册为全局组件
+│   │  ├── dist           //  文档打包后产物
+│   │  ├── plugins        //  文档插件
 │   │  ├── public         //  静态资源目录
 │   │  ├── styles         //  用于存放样式相关的文件
 │   │  ├── config.js      //  配置文件的入口文件
 │   │  ├── enhanceApp.js  //  客户端应用的增强
-│   ├── components        //  编写组件文档
-│   └── scaffolds         //  编写模板文档
+│   ├── components        //  编写组件文档（放弃）
+│   └── scaffolds         //  编写模板文档（放弃）
 │   └── usages            //  使用方式等介绍
 │   └── README.md
 
@@ -29,7 +31,15 @@ yarn run dev
 
 ## 文档创建
 
-- 业务组件文档，请在`/docs/src/components`下新建`md`文档文件。
+在您的每个业务组件和模板的文件夹下都创建一个 README.md 文件，用来编写您的文档。如：
+
+```
+cd scaffolds
+cd vue2.x-template
+touch README.md
+```
+
+<!-- - 业务组件文档，请在`/docs/src/components`下新建`md`文档文件。
 - 项目模板文档，请在`/docs/src/scaffolds`下新建`md`文档文件。
 - 如果是关于文档的使用和介绍，请在`/docs/src/usages`下新建`md`文档文件。
 
@@ -64,13 +74,14 @@ module.exports = {
       },
   },
 };
-```
 
-## 编写文档
+````-->
+
+# 编写文档
 
 在`md`文件中，你可以根据`markdown`的语法书写物料的使用方式。如果要进行组件的功能和 UI 展示的话，此时需要将物料引入。因为目前业务组件的展示形式可能相对较多，此处以业务组件为例。
 
-首先要引入组件，能够让组件在全局范围内使用，假设现在有个`ExampleComp.vue`组件，那么我们在`/docs/src/.vuepress/enhanceApp.js`进行引入并注册：
+<!-- 首先要引入组件，能够让组件在全局范围内使用，假设现在有个`ExampleComp.vue`组件，那么我们在`/docs/src/.vuepress/enhanceApp.js`进行引入并注册：
 
 ```javascript
 //enhanceApp.js
@@ -79,9 +90,9 @@ import ExampleComp from "../../../components/ExampleComp";
 export default ({ Vue }) => {
   Vue.use(ExampleComp);
 };
-```
+``` -->
 
-此时，就可以在我们的`ExampleComp.md`文档中直接使用该组件，如下：
+在文档中我们已经将每个业务组件全局注册，您可以直接在文档中使用组件，如可以在我们的`ExampleComp.md`文档中直接使用该组件，如下：
 
 ```markdown
 // ExampleComp.md

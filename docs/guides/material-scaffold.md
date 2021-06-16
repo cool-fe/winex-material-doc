@@ -6,6 +6,10 @@
 
 在物料模板的`scaffolds`的目录下新建您当前的项目模板文件夹`eg: wn-vue2-template`，然后将您的项目模板复制到该文件夹中。
 
+::: tip
+注意：在每个模板的文件夹下都需要有一个 README.md 文件，用来编写你对该模板的描述和使用文档。
+:::
+
 ```json
 cd wn-vue2-template
 yarn install
