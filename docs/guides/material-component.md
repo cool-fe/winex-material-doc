@@ -8,18 +8,16 @@
 
 ```
 cd components
-winex init --name my-component
+winex init --name tag --template @winex-scaf/common-component
 yarn install
 ```
 
-通过`winex init`指令执行后，按照下图进行对应项的选择，最终选择`@winex-comp/common-component`为业务组件的开发模板：
-
-![image.png](/winex-material-doc/component.png)
+通过`winex init`指令执行后，会在当前目录下初始化一个`tag`文件夹，用来开发业务组件。
 
 生成目录结构如下：
 
 ```json
-├── my-component
+├── tag
     ├── CHANGELOG.md      // 日志
     ├── README.md         // 组件描述文档
     ├── index.js          // 组件入口文件

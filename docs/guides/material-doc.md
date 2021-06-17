@@ -1,6 +1,8 @@
 # 物料文档
 
-开发完物料后，您需要将您的物料使用方法，以及使用案例以文档的方式进行表达。关于文档的编写、发布我们在`docs`目录下进行。进入到`docs`文件夹下，可以看到如下目录结构。
+开发完物料后，您需要将您的物料使用方法，以及使用案例以文档的方式进行表达。在每个物料文件夹下都有个一个`README.md`文件进行文档的编写。
+
+关于文档的启动、发布等我们在`docs`目录下进行。进入到`docs`文件夹下，可以看到如下目录结构。
 
 ```json
 ├── package.json
@@ -38,6 +40,8 @@ cd scaffolds
 cd vue2.x-template
 touch README.md
 ```
+
+启动文档后就可以看到其中对应的内容。
 
 <!-- - 业务组件文档，请在`/docs/src/components`下新建`md`文档文件。
 - 项目模板文档，请在`/docs/src/scaffolds`下新建`md`文档文件。
@@ -79,23 +83,12 @@ module.exports = {
 
 # 编写文档
 
-在`md`文件中，你可以根据`markdown`的语法书写物料的使用方式。如果要进行组件的功能和 UI 展示的话，此时需要将物料引入。因为目前业务组件的展示形式可能相对较多，此处以业务组件为例。
+在`md`文件中，你可以根据`markdown`的语法书写物料的使用方式。如果要进行组件的功能和 UI 展示的话，需要将物料引入。
 
-<!-- 首先要引入组件，能够让组件在全局范围内使用，假设现在有个`ExampleComp.vue`组件，那么我们在`/docs/src/.vuepress/enhanceApp.js`进行引入并注册：
-
-```javascript
-//enhanceApp.js
-import ExampleComp from "../../../components/ExampleComp";
-
-export default ({ Vue }) => {
-  Vue.use(ExampleComp);
-};
-``` -->
-
-在文档中我们已经将每个业务组件全局注册，您可以直接在文档中使用组件，如可以在我们的`ExampleComp.md`文档中直接使用该组件，如下：
+在文档中我们已经将每个业务组件全局注册，您可以直接在文档中使用组件，如可以在我们的`README.md`文档中直接使用该组件，如下：
 
 ```markdown
-// ExampleComp.md
+// README.md
 
 # Example 组件
 
@@ -142,7 +135,7 @@ export default {
 
 ```
 
-然后这个`ExampleCompDisable.vue`组件，我们就可以在`ExampleComp.md`中直接使用：
+然后这个`ExampleCompDisable.vue`组件，我们就可以在`README.md`中直接使用：
 
 ```markdown
 // ExampleComp.md
