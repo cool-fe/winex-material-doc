@@ -1,7 +1,7 @@
 ---
 home: true
-actionText: Getting Started
-actionLink: /usage/getting-started
+actionText: 快速开始 →
+actionLink: /guides/
 ---
 
 ### Install
