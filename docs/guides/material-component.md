@@ -74,3 +74,57 @@ yarn run release
 ```
 
 在执行`yarn run release`的时候，会将我们我们的业务组件进行打包，然后将有修改的业务组件进行发布到我们的私服上, 然后生成并上传物料数据。
+
+## 组件入口
+
+组件入口文件为`index.js`文件：
+
+```javascript
+import ExampleComponent from "./src/ExampleComponent.vue";
+
+ExampleComponent.install = function(Vue) {
+  Vue.component(ExampleComponent.name, ExampleComponent);
+};
+
+export default ExampleComponent;
+```
+
+## 组件工程配置
+
+目前默认组件的打包是通过`@winfe/fire-scripts`进行打包，其主要是基于`webpack`之上构建的 CLI 服务，主要包含了：
+
+- 提供了 build 命令进行业务组件打包
+
+### 打包 umd 文件
+
+通过构建组件将业务组件以 UMD 模块方式打包:
+
+```json
+{
+  "path": path.resolve(process.cwd(), "./lib/"),
+  "filename": "index.js",
+  "chunkFilename": "[id].js",
+  "libraryTarget": "umd"
+}
+```
+
+## 公共依赖排除
+
+目前主要针对`Vue`和`element-ui`进行了依赖排除：
+
+```javascript
+exports.externals = {
+  vue: {
+    root: "Vue",
+    commonjs: "vue",
+    commonjs2: "vue",
+    amd: "vue",
+  },
+  "element-ui": {
+    root: "element-ui",
+    commonjs: "element-ui",
+    commonjs2: "element-ui",
+    amd: "element-ui",
+  },
+};
+```
