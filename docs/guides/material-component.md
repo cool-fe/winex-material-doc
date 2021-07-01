@@ -4,7 +4,7 @@
 
 ## 创建组件项目
 
-在域物料开发项目中，进入`components`目录，通过[`winex init`](https://cool-fe.github.io/docs-winex-cli/guide/init.html)基于[业务组件项目模板](http://172.16.6.214/webmaterials-common/scaffolds/component/)初始化业务组件项目：
+在域物料开发项目中，进入`components`目录，通过[`winex init`](https://cool-fe.github.io/docs-winex-cli/guide/init.html)基于[@winex-scaf/common-component](http://172.16.6.214/webmaterials-common/scaffolds/component/)初始化业务组件的一个标准目录：
 
 ```
 winex init --name tag --template @winex-scaf/common-component
@@ -22,9 +22,10 @@ winex init --name tag --template @winex-scaf/common-component
     ├── src               // 组件目录
     │   └── ExampleComp.vue    // 组件开发
 ```
-### 额外配置
 
-想要发布业务组件还需修改`package.json`，增加或修改如下`必须`的字段：
+### 配置
+
+初始化项目目录后，还需修改`package.json`中的一些内容，增加或修改如下`必须`的字段：
 
 ```json
 {
@@ -40,7 +41,7 @@ winex init --name tag --template @winex-scaf/common-component
     "version": "fire-scripts build" // 此处脚本命令用version，打包时会走lerna的钩子
   },
   "dependencies": {
-    "@winfe/fire-scripts": "^1.0.7"
+    "@winfe/fire-scripts": "^1.0.13"
   },
   // componentConfig 此处需要自己添加
   "componentConfig": {
@@ -51,10 +52,10 @@ winex init --name tag --template @winex-scaf/common-component
   }
 }
 ```
-::: warning
-**确认完成必选设置后，就可以进行业务组件开发**
-:::
 
+::: warning
+**完成必选设置后，就可以进行业务组件开发**
+:::
 
 ## 组件入口
 
