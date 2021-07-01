@@ -6,7 +6,7 @@ actionLink: /guides/
 
 ### Install
 
-全局安装`@winfe/winex-cli`脚手架工具，用来安装物料。
+全局安装`@winfe/winex-cli`脚手架工具，用来安装物料。111
 
 ```bash
 $ yarn global add @winfe/winex-cli
