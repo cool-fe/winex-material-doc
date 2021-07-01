@@ -2,19 +2,16 @@
 
 功能比较确定，例如患者 banner 等，项目中只需要引入对应的 npm 包即可，项目不关心也无法修改组件内部的代码，只能通过组件定义的 props 控制。
 
-## 创建组件
+## 创建组件项目
 
-在域物料开发项目中，进入`components`目录，在当前目录下创建业务组件文件夹, 目前我们可以通过`winex init`的方式进行初始化业务组件目录结构，如下：
+在域物料开发项目中，进入`components`目录，通过[`winex init`](https://cool-fe.github.io/docs-winex-cli/guide/init.html)基于[业务组件项目模板](http://172.16.6.214/webmaterials-common/scaffolds/component/)初始化业务组件项目：
 
 ```
-cd components
 winex init --name tag --template @winex-scaf/common-component
-yarn install
 ```
 
-通过`winex init`指令执行后，会在当前目录下初始化一个`tag`文件夹，用来开发业务组件。
 
-生成目录结构如下：
+项目目录结构：
 
 ```json
 ├── tag
@@ -26,8 +23,9 @@ yarn install
     ├── src               // 组件目录
     │   └── ExampleComp.vue    // 组件开发
 ```
+### 额外配置
 
-业务组件的开发目录结构生成后，还需修改`package.json`中一些配置信息，如下的这些字段和配置都是`必须`进行修改和增加的部分：
+想要发布业务组件还需修改`package.json`，增加或修改如下`必须`的字段：
 
 ```json
 {
@@ -54,8 +52,9 @@ yarn install
   }
 }
 ```
-
-完成最基础的这些设置后，就可以开始你的业务组件开发。
+::: warning
+**确认完成必选设置后，就可以进行业务组件开发**
+:::
 
 <!--
 ## 组件命名

@@ -68,6 +68,7 @@ module.exports = {
             "/guides/material-component",
             "/guides/material-scaffold",
             "/guides/material-doc",
+            "/guides/material-release",
           ],
         },
       ],

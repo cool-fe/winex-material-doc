@@ -48,11 +48,3 @@ cd wn-vue-template
 yarn install
 yarn start
 ```
-
-## 发布模板
-
-在模板完成后，进入域物料项目根目录下。首先将本次开发修改的内容提交。然后执行`yarn run release`进行物料的编译和发布：
-
-```shell
-yarn run release
-```
