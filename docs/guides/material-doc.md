@@ -2,11 +2,10 @@
 
 开发完物料后，您需要将您的物料使用方法，以及使用案例以文档的方式进行表达。在每个物料文件夹下都有个一个`README.md`文件进行文档的编写。
 
-关于文档的启动、发布等我们在`docs`目录下进行。进入到`docs`文件夹下，可以看到如下目录结构。
+关于文档的启动、发布等我们在根目录下进行。进入到`docs`文件夹下，可以看到如下目录结构。
 
 ```json
-├── package.json
-├── src
+├── docs
 │   ├── .vuepress
 │   │  ├── components     //  该目录中的 Vue 组件将会被自动注册为全局组件
 │   │  ├── dist           //  文档打包后产物
@@ -32,7 +31,7 @@ yarn run dev
 
 ## 创建文档
 
-在物料项目文件夹下创建一个 README.md 文件(文档服务基于[vuepress](https://vuepress.vuejs.org/zh/guide/))，可以在README.md文件写任何vuepress支持的语法。如：
+在物料项目文件夹下创建一个 README.md 文件(文档服务基于[vuepress](https://vuepress.vuejs.org/zh/guide/))，可以在 README.md 文件写任何 vuepress 支持的语法。如：
 
 ```
 cd scaffolds
@@ -47,7 +46,6 @@ touch README.md
 ::: warning
 注意：物料名称为 md 文件名。如组件名叫做 ExampleComp，那么对应的 md 文件就叫做 ExampleComp.md
 :::
-
 
 ## 编写文档
 
@@ -100,7 +98,7 @@ export default {
   },
 };
 </script>
-````
+```
 
 然后这个`ExampleCompDisable.vue`组件，我们就可以在`README.md`中直接使用：
 
@@ -124,14 +122,13 @@ export default {
 
 ![image.png](/winex-material-doc/demo.png)
 
-
 ## 静态资源
 
 ### 相对路径
 
 所有的 Markdown 文件都会被 webpack 编译成 Vue 组件，因此你可以，并且**应该更倾向于**使用相对路径（Relative URLs）来引用所有的静态资源：
 
-``` md
+```md
 ![An image](./image.png)
 ```
 
@@ -139,23 +136,23 @@ export default {
 
 除此之外，你也使用 `~` 前缀来明确地指出这是一个 webpack 的模块请求，这将允许你通过 webpack 别名来引用文件或者 npm 的依赖：
 
-``` md
+```md
 ![Image from alias](~@alias/image.png)
 ![Image from dependency](~some-dependency/image.png)
 ```
 
 Webpack 的别名可以通过 `.vuepress/config.js` 中 [configureWebpack](../config/README.md#configurewebpack) 来配置，如：
 
-``` js
+```js
 module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@alias': 'path/to/some/dir'
-      }
-    }
-  }
-}
+        "@alias": "path/to/some/dir",
+      },
+    },
+  },
+};
 ```
 
 ### 公共文件
@@ -168,7 +165,7 @@ module.exports = {
 
 有了基础路径（Base URL），如果你希望引用一张放在 `.vuepress/public` 中的图片，你需要使用这样路径：`/bar/image.png`，然而，一旦某一天你决定去修改 `base`，这样的路径引用将会显得异常脆弱。为了解决这个问题，VuePress 提供了内置的一个 helper `$withBase`（它被注入到了 Vue 的原型上），可以帮助你生成正确的路径：
 
-``` vue
+```vue
 <img :src="$withBase('/foo.png')" alt="foo">
 ```
 
