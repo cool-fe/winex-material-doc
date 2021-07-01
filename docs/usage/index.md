@@ -5,5 +5,9 @@
 推荐使用 yarn 作为包管理器。首先全局安装我们的脚手架工具，用来安装我们的物料：
 
 ```bash
-$ yarn add @winfe/winex-cli -g
+$ yarn global add  @winfe/winex-cli
 ```
+
+::: warning
+如果遇到安装不到最新版，请使用registry：https://registry.yarnpkg.com/、https://registry.npmjs.org/
+:::
