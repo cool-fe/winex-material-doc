@@ -29,7 +29,7 @@
 yarn run dev
 ```
 
-## 文档创建
+## 创建文档
 
 在物料项目文件夹下创建一个 README.md 文件(文档服务基于[vuepress](https://vuepress.vuejs.org/zh/guide/))，可以在 README.md 文件写任何 vuepress 支持的语法。如：
 
@@ -173,7 +173,7 @@ module.exports = {
 
 最后补充一句，一个 `base` 路径一旦被设置，它将会自动地作为前缀插入到 `.vuepress/config.js` 中所有以 `/` 开始的资源路径中。
 
-## 文档发布
+## 发布文档
 
 文档写完后，需要在根目录下进行`build`操作：
 
