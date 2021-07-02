@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: 步骤：第一步 -> Use Node.js ${{ matrix.node-version }}
+      - name: 步骤:第一步 -> Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
