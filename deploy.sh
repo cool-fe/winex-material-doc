@@ -18,6 +18,9 @@ git init
 git add -A
 git commit -m 'deploy'
 
+git remote rm origin || true
+git remote add origin https://github.com/cool-fe/winex-material-doc.git master:gh-pages
+
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
