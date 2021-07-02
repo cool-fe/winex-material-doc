@@ -1,28 +1,35 @@
-name: CI
+name: release docs CI
 
 on:
   push:
     branches:
       - main
-jobs: # 工作流
+
+jobs:
   build:
-    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
-      - name: Checkout # 步骤1
-        uses: actions/checkout@v1 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
-      - name: Use Node.js ${{ matrix.node-version }} # 步骤2
-        uses: actions/setup-node@v1 # 作用：安装nodejs
+      - uses: actions/checkout@v1
+      - name: 步骤：第一步 -> Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }} # 版本
-      - name: run deploy.sh # 步骤3 （同时部署到github和coding）
-        env: # 设置环境变量
-          ACCESS_TOKEN_DEPLOY: ${{ secrets.ACTION_SECRET }}
+          node-version: ${{ matrix.node-version }}
+
+      - name: 步骤：第二步 -> 安装依赖
+        run: |
+          npm install
+          npm run build
+        env:
+          CI: true
+
+      - name: 步骤：第三步 -> 使用脚本部署
+        env:
+          ACCESS_TOKEN_DEPLOY: ${{secrets.ACCESS_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }} # toKen私密变量
-        run: npm install && npm run deploy # 执行的命令
-        # package.json 中添加 "deploy": "bash deploy.sh"
+          PUBLISH_DIR: ./docs/.vuepress/dist
+        uses: veaba/vuepress-actions@v0.83
