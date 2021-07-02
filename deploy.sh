@@ -17,7 +17,7 @@ git config user.email "405163706@qq.com"
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/cool-fe/winex-material-doc.git master:gh-pages
+git push -f https://github.com/cool-fe/winex-material-doc.git main:gh-pages
 
 cd -
 
