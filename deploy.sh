@@ -12,7 +12,7 @@ cd docs/.vuepress/dist
 
 
 git init
-git config user.name "${GITHUB_ACTOR}"
+git config user.name "frontHu"
 git config user.email "405163706@qq.com"
 git add -A
 git commit -m 'deploy'
