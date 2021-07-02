@@ -1,13 +1,13 @@
-name: github pages
+name: "Vuepress"
 
-on:
+on: # 触发条件
+  # 每当 push 到 master 分支时触发部署
   push:
-    branches:
-      - main
+    branches: main
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 指定运行所需要的虚拟机环境（必填）
 
     steps:
       - uses: actions/checkout@v2
@@ -42,6 +42,7 @@ jobs:
         run: npm run build
 
       # 查看 workflow 的文档来获取更多信息
+      # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         # 环境变量
