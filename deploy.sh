@@ -12,13 +12,13 @@ cd docs/.vuepress/dist
 
 
 git init
-git config --global init.defaultBranch main
+git config --global init.defaultBranch master
 git config user.name "frontHu"
 git config user.email "405163706@qq.com"
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/cool-fe/winex-material-doc.git main:gh-pages
+git push -f https://github.com/cool-fe/winex-material-doc.git master:gh-pages
 
 cd -
 
