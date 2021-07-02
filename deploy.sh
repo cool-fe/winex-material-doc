@@ -9,11 +9,29 @@ npm run build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
 
-git config --global user.name "405163706@qq.com"
-git config --global user.email "405163706@qq.com"
+# 配置仓库地址
+if [ -n "${EXTERNAL_REPOSITORY}" ]; then
+    PUBLISH_REPOSITORY=${EXTERNAL_REPOSITORY}
+else
+    PUBLISH_REPOSITORY=${GITHUB_REPOSITORY}
+fi
+
+# 配置ssh
+if [ -n "${ACCESS_TOKEN_DEPLOY}" ]; then
+    echo "设置 ACCESS_TOKEN_DEPLOY"
+    SSH_DIR="${HOME}/.ssh"
+    mkdir "${SSH_DIR}"
+    ssh-keyscan -t rsa github.com >"${SSH_DIR}/known_hosts"
+    echo "${ACCESS_TOKEN_DEPLOY}" >"${SSH_DIR}/id_rsa"
+    chmod 400 "${SSH_DIR}/id_rsa"
+    remote_repo="git@github.com:${PUBLISH_REPOSITORY}.git"
+fi
+
+
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
 
 git init
 
