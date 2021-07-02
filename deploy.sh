@@ -1,16 +1,16 @@
 # !/bin/bash
 set -e
 # 检查Actions目录配置
-if [ -z "${PUBLISH_DIR}" ]; then
-    echo "【致命错误】：workflows尚未设置 PUBLISH_DIR"
-    exit 1
-fi
+# if [ -z "${PUBLISH_DIR}" ]; then
+#     echo "【致命错误】：workflows尚未设置 PUBLISH_DIR"
+#     exit 1
+# fi
 
-# 检查设置的目录是否存在，不存在直接退出
-if [ -d "$(pwd)${PUBLISH_DIR}" ]; then
-    echo "【致命错误】：PUBLISH_DIR 尚未生成"
-    exit 1
-fi
+# # 检查设置的目录是否存在，不存在直接退出
+# if [ -d "$(pwd)${PUBLISH_DIR}" ]; then
+#     echo "【致命错误】：PUBLISH_DIR 尚未生成"
+#     exit 1
+# fi
 
 # 检查要发布的分支名称
 if [ -z "${PUBLISH_BRANCH}" ]; then
