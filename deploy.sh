@@ -10,7 +10,7 @@ npm run build
 cd docs/.vuepress/dist
 
 git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config user.email "405163706@qq.com"
 
 
 git init
