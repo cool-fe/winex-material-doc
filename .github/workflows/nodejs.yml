@@ -33,6 +33,3 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./docs/.vuepress/dist
         uses: veaba/vuepress-actions@v0.83
-        run: |
-          chmod +x ./deploy.sh
-          bash ./deploy.sh
