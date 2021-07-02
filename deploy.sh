@@ -16,9 +16,6 @@ cd docs/.vuepress/dist
 
 git init
 
-git config user.name "hzw"
-git config user.email "405163706@qq.com@qq.com"
-
 git add -A
 git commit -m 'deploy'
 
