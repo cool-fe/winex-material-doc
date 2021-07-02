@@ -12,6 +12,7 @@ cd docs/.vuepress/dist
 
 
 git init
+git config --global init.defaultBranch main
 git config user.name "frontHu"
 git config user.email "405163706@qq.com"
 git add -A
