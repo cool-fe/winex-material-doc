@@ -33,5 +33,5 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./docs/.vuepress/dist
         run: |
-          chmod +x deploy.sh
-          bash deploy.sh
+          chmod +x ./deploy.sh
+          bash ./deploy.sh
