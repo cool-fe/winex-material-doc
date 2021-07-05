@@ -1,6 +1,6 @@
 module.exports = {
   base: "/winex-material-doc/", //部署站点基础路径
-  title: "WINEX物料文档",
+  title: "WINEX物料文档。",
   description: " ",
   head: [
     // 额外需要被注入到当前页面的HTML<head>中的标签
