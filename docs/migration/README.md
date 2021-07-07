@@ -55,7 +55,7 @@ module.exports = {
 
 ### 如何排除公共依赖打包
 
-可以在winfe.config.js配置文件中设置externals
+可以在winfe.config.js配置文件中设置externals:
 
 ```javascript
 // winfe.config.js
@@ -63,11 +63,12 @@ module.exports = {
     ....
     configureWebpack: {
         externals:{
-            @winfe/winfe-request: {
-                commonjs: 'winfe-request',
-                amd: 'winfe-request',
-                root: '_', // 指向全局变量
-              },
+            vue: {
+                root: "Vue",
+                commonjs: "vue",
+                commonjs2: "vue",
+                amd: "vue",
+            },
         }
     }
 }
