@@ -12,7 +12,9 @@ module.exports = {
       // 导航栏链接
       { text: "首页", link: "/" },
       { text: "开发物料", link: "/guides/" },
+      { text: "开发套件", link: "/plugins/start/" },
       { text: "使用物料", link: "/usage/" },
+      { text: "物料迁移指南", link: "/migration/" },
       {
         text: "业务域",
         ariaLabel: "业务域",
@@ -77,6 +79,22 @@ module.exports = {
           title: "使用教程",
           collapsable: false,
           children: ["/usage/", "/usage/install", "/usage/use"],
+        },
+      ],
+      "/migration/": [
+        {
+          title: "物料迁移指南",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ["/migration/"],
+        },
+      ],
+      "/plugins/": [
+        {
+          title: "开发套件",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: ["/plugins/start", "/plugins/request"],
         },
       ],
     },
