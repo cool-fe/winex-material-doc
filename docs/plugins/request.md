@@ -1,6 +1,6 @@
 # request
 
-@winfe/winfe-request 基于 `axios` 提供了一套统一的网络请求和错误处理方案。兼容`his-request`
+@winfe/win-request 基于 `axios` 提供了一套统一的网络请求和错误处理方案。兼容`his-request`
 
 ## 启用方式
 默认启用
@@ -10,9 +10,9 @@
 ### 安装
 
 ```javascript
-npm install @winfe/winfes-request
+npm install @winfe/win-request
 # OR
-yarn add @winfe/winfes-request
+yarn add @winfe/win-request
 ```
 ### 支持
 - 自定义请求配置
@@ -58,7 +58,7 @@ export interface AxiosResponse {
 
 ```javascript
 
-import Request from '@winfe/winfe-request'
+import Request from '@winfe/win-request'
 import { Message } from 'element-ui'
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -120,7 +120,7 @@ export const addOriginService = temp(url, {
 该方法获取 cookie 信息, 它放回一个object 包括 user 、header 信息
 
 ```javascript
-import Request from '@winfe/winfes-request'
+import Request from '@winfe/win-request'
 /*
 * @return { Object } Cookies
 */
