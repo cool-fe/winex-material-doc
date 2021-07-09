@@ -39,10 +39,11 @@ winex init --name tag --template @winex-scaf/common-component
   "files": ["lib"],
   // scripts 此处需要自己添加
   "scripts": {
-    "version": "winex fire build" // 此处脚本命令用version，打包时会走lerna的钩子
+    "version": "winex fire build", // 此处脚本命令用version，打包时会走lerna的钩子
+    "start": "winex fire start" // 本地调试
   },
   "dependencies": {
-    "@winfe/winex-cli": "^1.1.0"
+    "@winfe/winex-cli": "^1.1.0" // @winfe/winex-cli前期更新可能比较快，持续关注winex-cli文档
   },
   // componentConfig 此处需要自己添加
   "componentConfig": {
