@@ -80,28 +80,8 @@ export default ExampleComponent;
 
 ## 样式文件
 
-默认样式文件可以在`index.scss`，根据组件开发需求可以调整为 `index.css` 或 `index.less`,默认配置仅支持`css`和`scss`。
-
-### 内置 scss
-
-在迁移业务组件过程中，由于之前业务组件中的 scss 依赖了一些公共的变量，mixin 文件 等。但是在物料仓库中并没有这些文件而会导致报错，所以我们将这些公共的 scss 文件进行提取并在开发过程中进行内置处理。
-
-这样在迁移的过程中，业务组件 scss 中关于公共的 scss 文件的引用代码就可以进行删除，并且可以直接使用相关的 scss 变量和 mixin 等。
-
-如，我们在迁移`header`组件的时候，在迁移`win-header.scss`过程中，发现`win-header.scss`顶部有依赖公共的`mixins.scss`，我们只需要将它进行注释或者删除（~~@import "../mixins/mixins";~~）就可以避免没有该`mixins.scss` 而导致的报错问题。其中关于`mixins.scss`提供的一些`mixin`我们都会进行内置处理。
-
-```scss
-// win-header.scsss
-
-// @import "../mixins/mixins"; 删除这行
-
-.win-header {
-  @include win(header-wrapper) {
-    // .....
-    // .....
-  }
-}
-```
+默认会在组件根目录生成样式文件`index.scss`，根据组件开发需求可以调整为 `css` 或 `scss`, 默认配置仅支持`css`和`scss`。
+开发者只需要在该文件中编写样式文件或者引入其他的样式文件即可。
 
 ## 编写文档
 
