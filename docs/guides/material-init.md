@@ -15,8 +15,9 @@
 | [MVP-winning-webmaterials-clinical](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-clinical)   | 临床域物料仓库             | 韩重阳   |
 | [MVP-winning-webmaterials-record](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-record)       | 记录域物料仓库             | 刘晨辉   |
 | [MVP-winning-webmaterials-material](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-material)   | 物品域物料仓库             | 刘永佳   |
+| [MVP-winning-webmaterials-shanxi](http://tfs2018-web.winning.com.cn:8080/tfs/WINNING-6.0/W.in-MVP/_git/winning-webmaterials-shanxi)       | 山西物料仓库               | 丁惠波   |
 
-**大家记住这里域的 name 术语（common，finance，encounter，person，execution，clinical，record，material），这些是枚举值大家一定遵守不要拼写错误**
+**大家记住这里域的 name 术语（common，finance，encounter，person，execution，clinical，record，material，shanxi），这些是枚举值大家一定遵守不要拼写错误**
 
 ## 域物料仓库结构
 
