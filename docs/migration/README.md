@@ -73,3 +73,16 @@ module.exports = {
     }
 }
 ```
+
+### 遇到node-sass版本问题
+
+如果遇到如下错误：
+
+<img :src="$withBase('/node-sass.png')" alt="node-sass"></img>
+
+一般情况下需要执行
+
+```sh
+npm rebuild node-sass
+```
+

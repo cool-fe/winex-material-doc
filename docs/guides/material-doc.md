@@ -21,6 +21,14 @@
 
 ```
 
+## 配置vuepress插件(`@winfe/plugin-material-config`)
+
+为了方便物料文档的配置和抒写，相关配置全部集成到`@winfe/plugin-material-config`插件中，开箱即用。主要包含如下功能：
+- 各组件物料下安装的依赖会自动被根目录docs读取，不需要再提升依赖到根目录或者docs目录
+- 各组件物料根目录下`winex.config.js`的`proxy`配置，docs会自动读取，不需要再在docs重复配置一遍
+- 自动读取组件物料根目录下的`README.md`文件并生成vuepress文档，保证写文档和开发不分离
+- 自动读取组件物料并全局注册，可在文档中直接使用
+
 ## 启动文档
 
 通过`yarn run dev`启动文档：
