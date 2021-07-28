@@ -21,7 +21,13 @@
 
 ```
 
-## 配置vuepress插件(`@winfe/plugin-material-config`)
+## 配置vuepress插件
+
+安装`@winfe/plugin-material-config`
+
+```
+yarn add @winfe/plugin-material-config -D
+```
 
 为了方便物料文档的配置和抒写，相关配置全部集成到`@winfe/plugin-material-config`插件中，开箱即用。主要包含如下功能：
 - 各组件物料下安装的依赖会自动被根目录docs读取，不需要再提升依赖到根目录或者docs目录
