@@ -98,3 +98,38 @@ npm rebuild node-sass
   }
 }
 ```
+
+## 注意事项
+
+::: warning 弃用
+在组件迁移完成后，2021年8月10号，`winning-components` 已正式弃用。将不会有人维护`winning-components`.
+:::
+
+### 关于winning-components
+
+`winning-components` 本身的代码维护在仓库`winning-webcomponents-finance-common`, 包括：
+
+- 业务组件集合（packages）
+- 对element-ui 自定义的一套主题（finance-theme）
+
+另外构建出的产物包括：
+
+- 所有单个组件的umd.js (例如：[ 票据打印组件：*/winex/lib/invoice-print.umd.js*, ... ])
+- 组件集合的umd.js （/winex/lib/win-components.umd.js）
+- his组件集合 （/winex/lib/winning-his.min.js）
+- 就诊部分组件集合 （/winex/lib/win-components.encounter.umd.js）
+- element-ui 自定义样式 （/winex/lib/finance-theme/index.css）
+- element-ui 自定义样式 + his组件集合样式 （/winex/lib/finance-theme/winning.his.css）
+
+如果你的代码对以上产物有依赖，则需要修改，目前的方案将业务组件和基础UI组件（element-ui）完全分开
+
+- element-ui 自定义样式迁移到 [web-public](http://172.16.7.60/web-public/base-ui/index.css)上由公共前端团队维护。
+
+- 如果之前通过外链方法使用单个组件的话需要改为`npm`包方式。
+
+- **his组件集合、 element-ui 自定义样式 + his组件集合样式** 需要his前端自己处理，如果你的项目有使用`/winex/lib/winning-his.min.js` 需要修改
+
+- **就诊部分组件集合**需要就诊前端自己处理
+
+
+**另外有通过`npm`包使用`winning-components`建议找到组件开发者进行替换。**
