@@ -62,14 +62,28 @@ module.exports = {
           children: ["/guides/", "/guides/flow"],
         },
         {
-          title: "开发物料",
+          title: "研发流程",
           collapsable: false,
           children: [
             "/guides/material-init",
             "/guides/material-name",
-            "/guides/material-component",
-            "/guides/material-scaffold",
+            {
+              title: "物料开发",
+              collapsable: false,
+              children: [
+                "/guides/material-component",
+                "/guides/material-scaffold",
+              ],
+            },
             "/guides/material-doc",
+            {
+              title: "物料版本",
+              collapsable: false,
+              children: [
+                "/guides/material-version",
+                "/guides/material-version-practice"
+              ],
+            },
             "/guides/material-release",
           ],
         },

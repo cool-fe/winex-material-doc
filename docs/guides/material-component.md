@@ -1,13 +1,13 @@
-# 业务组件开发
+# 业务组件
 
 功能比较确定，例如患者 banner 等，项目中只需要引入对应的 npm 包即可，项目不关心也无法修改组件内部的代码，只能通过组件定义的 props 控制。
 
 ## 创建组件
 
-在域物料开发项目中，进入`components`目录，通过[`winex init`](https://cool-fe.github.io/docs-winex-cli/guide/init.html)基于[@winex-scaf/common-component](http://172.16.6.214/webmaterials-common/scaffolds/component/)初始化业务组件的一个标准目录：
+在域物料项目中，进入`components`目录，可以使用[`公共域(common)`](http://172.16.6.214/webmaterials-common/scaffolds/component/)的组件模版[`@winex-scaf/common-component`](http://172.16.6.214/webmaterials-common/scaffolds/component/)，通过[`winex init`](https://cool-fe.github.io/docs-winex-cli/guide/init.html)创建标准业务组件项目：
 
 ```
-winex init --name tag --template @winex-scaf/common-component
+winex init --name <tag> --template <@winex-scaf/common-component>
 ```
 
 项目目录结构：
@@ -59,9 +59,23 @@ winex init --name tag --template @winex-scaf/common-component
 **完成必选设置后，就可以进行业务组件开发**
 :::
 
-## 组件开发调试
-
+## 开发调试
+### 预览本地组件
 关于组件的本地开发调试，`@winfe/winex-cli`提供了`winex fire start`命令可以进行本地开发调试。详细使用方式请参考[本地调试](/plugins/start.html)
+### 本地项目调试(link)
+可以采用yarn link方式，首先在组件目录执行
+```bash
+yarn run link
+```
+然后就可以在需要调试的项目根目录执行
+```bash
+yarn link <package name>
+```
+
+
+### 远程调试
+
+#### 本地开启dev watch build，开启dev打包，远程项目通过内网ip直接加载
 
 ## 组件入口
 
@@ -78,7 +92,7 @@ ExampleComponent.install = function(Vue) {
 export default ExampleComponent;
 ```
 
-## 样式文件
+## 组件样式
 
 默认会在组件根目录生成样式文件`index.scss`，根据组件开发需求可以调整为 `css` 或 `scss`, 默认配置仅支持`css`和`scss`。
 开发者只需要在该文件中编写样式文件或者引入其他的样式文件即可。

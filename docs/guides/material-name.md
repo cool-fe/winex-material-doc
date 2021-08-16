@@ -8,8 +8,9 @@
 
 - 业务组件物料名称：即 package.json 中的 name 名称，以`@winex-comp/[域名]-[组件名称]`格式进行命名。
 
-```
-`eg:@winex-comps/encounter-tag`
+```javascript
+// component 业务组件
+@winex-comps/encounter-tag
 ```
 
 - 业务组件文件夹名称：按照`短横线分隔 (kebab-case)`进行名。`eg: my-tag`
@@ -18,9 +19,9 @@
 
 - 模板的包名：即 package.json 中的 name 名称，按照`@winex-scaf/[域名]-[模板名称]`格式进行命名。
 
-```
-
-`eg:@winex-scaf/encounter-vue-template`
+```javascript
+// scaffold 项目模版
+@winex-scaf/encounter-vue-template
 ```
 
 - 模板文件夹：按照`短横线分隔 (kebab-case)`进行名。`eg: my-vue-template`
