@@ -6,6 +6,11 @@ module.exports = {
     // 额外需要被注入到当前页面的HTML<head>中的标签
     // ['link', {rel: 'icon', href: '/logo.png'}]
   ],
+  markdown: {
+    extendMarkdown: md => {
+      md.use(require('markdown-it-task-lists'))
+    }
+  },
   themeConfig: {
     logo: "", // 导航栏logo
     nav: [
