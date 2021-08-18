@@ -25,12 +25,12 @@
 
 ### umd资源
 
-物料umd产物的cdn地址：[http://172.16.6.51:9000/minio/winex/](http://172.16.6.51:9000/minio/winex/)
+// 物料umd产物的cdn地址：[http://172.16.6.51:9000/minio/winex/](http://172.16.6.51:9000/minio/winex/)
 
-umd js路径格式：`http://172.16.6.51:9000/minio/winex/<material-name>[version]`
+// umd js路径格式：`http://172.16.6.51:9000/minio/winex/materials-umd-lib/<domain>/<material-name>/[version]/`
 
-:::tip
-在项目中可以直接使用物料的umd资源，通过cdn地址直接加载
+:::warning
+现在不支持在项目中直接使用物料的umd资源
 :::
 
 ## 发布策略
