@@ -4,28 +4,87 @@
 **请确认完成了物料的必选设置后，就可以进行物料开发**
 :::
 
+## 发布配置
+
+### 发布registry 
+
+物料发布的nexus repository ：[http://172.16.9.242:8081/repository/winfe-material/](http://172.16.9.242:8081/repository/winfe-material/)
+
+:::warning
+物料发布的nexus repository单独管理，严格管控物料的发布，需要特殊账号才能发布。
+:::
+
+
+### 安装registry 
+
+物料安装nexus registry：[http://172.16.9.242:8081/repository/npm-group/](http://172.16.9.242:8081/repository/npm-group/)
+
+:::tip
+物料安装的nexus registry和业务私有registry是同一个
+:::
+
+### umd资源
+
+物料umd产物的cdn地址：[http://172.16.6.51:9000/minio/winex/](http://172.16.6.51:9000/minio/winex/)
+
+umd js路径格式：`http://172.16.6.51:9000/minio/winex/<material-name>[version]`
+
+:::tip
+在项目中可以直接使用物料的umd资源，通过cdn地址直接加载
+:::
+
 ## 发布策略
 
-目前物料仓库采用 lerna 进行管理，采取统一发布策略，也就是说会将所有有改动的物料统一进行发布。
+### 公测版发布(beta)
 
-考虑到目前我们开发物料的方式，一般不会出现同一个分支同时开发多个物料，推荐一个分支只做一个物料的迭代。当然如果真的是同一个分支同时进行多个物料开发，那就要保证所有物料都具备发布条件了，然后统一发布。
+当物料的所有功能均已开发完毕，自测通过后（后续会增加单元测试）就可以发布 beta 版本，作为一个公测的不稳定版本对外提供，业务在 dev 环境就可以直接使用 beta 版(`x.y.z-beta-*`)物料
 
-::: warning
-如果在后期同一个分支进行多个物料开发的场景较多，我们会支持单物料发布
-:::
+### 正式版发布(release)
+
+当物料的所有功能均通过测试验证，这时候物料可以发布稳定的正式版本，业务在 rc 环境就可以直接使用正式版(`x.y.z`)的物料
 
 ## 发布流程
 
-在物料开发完成后，在域物料项目根目录下：
+:::warning
+提交所有改动代码到远程仓库
+:::
 
-- 提交所有改动代码到远程仓库。
-- 然后执行`yarn run release`进行物料的编译和发布：
+### 发布命令(物料项目目录)
 
-```shell
-yarn run release
+#### 公测版发布(beta)
+
+```bash
+wienx  release  --[prepatch | preminor | premajor]
 ```
 
-在执行`yarn run release`的时候：
-- 针对业务组件物料会进行打包编译，然后发布到私服
-- 针对其他物料只进行发布到私服
-- 最后生成物料数据并上传
+#### 正式版发布(release)
+
+```bash
+wienx  release  --[patch | minor | major]
+```
+
+### 版本升级策略
+
+在执行`wienx release`的时候，会按照如下表格进行版本升级：
+
+#### beta 版本
+
+| 发布命令                       | 发布前版本号   | 发布后版本号     |
+| ------------------------------ | -------------- | ---------------- |
+| wienx release --preid prepatch | `x-y-z`        | `x-y-z+1-beta-0` |
+| wienx release --preid prepatch | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+| wienx release --preid preminor | `x-y-z`        | `x-y+1-0-beta-0` |
+| wienx release --preid preminor | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+| wienx release --preid premajor | `x-y-z`        | `x+1-0-0-beta-0` |
+| wienx release --preid premajor | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+
+#### release 版本
+
+| 发布命令                    | 发布前版本号   | 发布后版本号 |
+| --------------------------- | -------------- | ------------ |
+| wienx release --preid patch | `x-y-z`        | `x-y-z+1`    |
+| wienx release --preid patch | `x-y-z-beta-*` | `x-y-z`      |
+| wienx release --preid minor | `x-y-z`        | `x-y+1-0`    |
+| wienx release --preid minor | `x-y-z-beta-*` | `x-y-z`      |
+| wienx release --preid major | `x-y-z`        | `x+1-0-0`    |
+| wienx release --preid major | `x-y-z-beta-*` | `x-y-z`      |
