@@ -47,40 +47,48 @@
 
 ### 发布命令(物料项目目录)
 
+:::tip winex 版本要求
+@winfe/winex-cli 版本要大于 v1.1.15
+:::
+
 #### 公测版发布(beta)
 
 ```bash
-wienx  release  --[prepatch | preminor | premajor]
+wienx publish --beta [patch | minor | major]
 ```
+
+::: details 查看详情
+
+
+在执行`wienx publish`发布beta版本的时候，会按照如下表格进行版本升级：
+
+| 发布命令                        | 发布前版本号       | 发布后版本号        |
+| ------------------------------ | --------------   | ---------------- |
+| wienx publish --beta patch | `x-y-z`        | `x-y-z+1-beta-0` |
+| wienx publish --beta patch | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+| wienx publish --beta minor | `x-y-z`        | `x-y+1-0-beta-0` |
+| wienx publish --beta minor | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+| wienx publish --beta major | `x-y-z`        | `x+1-0-0-beta-0` |
+| wienx publish --beta major | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
+
+:::
 
 #### 正式版发布(release)
 
 ```bash
-wienx  release  --[patch | minor | major]
+wienx publish --release [patch | minor | major]
 ```
 
-### 版本升级策略
+::: details 查看详情
+在执行`wienx publish`发布release版本的时候，会按照如下表格进行版本升级：
 
-在执行`wienx release`的时候，会按照如下表格进行版本升级：
+| 发布命令                         | 发布前版本号      | 发布后版本号   |
+| ------------------------------- | -------------- | ------------ |
+| wienx publish --release patch     | `x-y-z`        | `x-y-z+1`    |
+| wienx publish --release patch     | `x-y-z-beta-*` | `x-y-z`      |
+| wienx publish --release minor     | `x-y-z`        | `x-y+1-0`    |
+| wienx publish --release minor     | `x-y-z-beta-*` | `x-y-z`      |
+| wienx publish --release major     | `x-y-z`        | `x+1-0-0`    |
+| wienx publish --release major     | `x-y-z-beta-*` | `x-y-z`      |
 
-#### beta 版本
-
-| 发布命令                       | 发布前版本号   | 发布后版本号     |
-| ------------------------------ | -------------- | ---------------- |
-| wienx release --preid prepatch | `x-y-z`        | `x-y-z+1-beta-0` |
-| wienx release --preid prepatch | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
-| wienx release --preid preminor | `x-y-z`        | `x-y+1-0-beta-0` |
-| wienx release --preid preminor | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
-| wienx release --preid premajor | `x-y-z`        | `x+1-0-0-beta-0` |
-| wienx release --preid premajor | `x-y-z-beta-*` | `x-y-z-beta-*+1` |
-
-#### release 版本
-
-| 发布命令                    | 发布前版本号   | 发布后版本号 |
-| --------------------------- | -------------- | ------------ |
-| wienx release --preid patch | `x-y-z`        | `x-y-z+1`    |
-| wienx release --preid patch | `x-y-z-beta-*` | `x-y-z`      |
-| wienx release --preid minor | `x-y-z`        | `x-y+1-0`    |
-| wienx release --preid minor | `x-y-z-beta-*` | `x-y-z`      |
-| wienx release --preid major | `x-y-z`        | `x+1-0-0`    |
-| wienx release --preid major | `x-y-z-beta-*` | `x-y-z`      |
+:::
