@@ -14,8 +14,8 @@
 
 | 开发阶段 | 代码分支        | 版本号         | 发布时机 | 发布版本号     | 执行命令                              |
 | -------- | --------------- | -------------- | -------- | -------------- | ------------------------------------- |
-| 开发阶段 | feat_xx_develop | `0.1.0`        | 开发阶段 | `1.0.0-beta-*` | `wienx publish premajor --preid=beta` |
-| rc 阶段  | rc              | `1.0.0-beta-*` | 测试通过 | `1.0.0`        | `wienx publish major`                 |
+| 开发阶段 | feat_xx_develop | `0.1.0`        | 开发阶段 | `1.0.0-beta-*` | `winex publish  --beta major` |
+| rc 阶段  | rc              | `1.0.0-beta-*` | 测试通过 | `1.0.0`        | `winex publish --release major`                 |
 
 ### 组件迭代
 
@@ -23,22 +23,22 @@
 
 | 开发阶段 | 代码分支        | 版本号           | 发布时机 | 发布版本号       | 执行命令                              |
 | -------- | --------------- | ---------------- | -------- | ---------------- | ------------------------------------- |
-| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x-y-z+1-beta-*` | `wienx publish prepatch --preid=beta` |
-| rc 阶段  | rc              | `x-y-z+1-beta-*` | 测试通过 | `x-y-z+1`        | `wienx publish patch`                 |
+| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x-y-z+1-beta-*` | `winex publish --beta patch` |
+| rc 阶段  | rc              | `x-y-z+1-beta-*` | 测试通过 | `x-y-z+1`        | `winex publish --release patch`                 |
 
 #### 新增向下兼容的功能
 
 | 开发阶段 | 代码分支        | 版本号           | 发布时机 | 发布版本号       | 执行命令                              |
 | -------- | --------------- | ---------------- | -------- | ---------------- | ------------------------------------- |
-| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x-y+1-0-beta-*` | `wienx publish preminor --preid=beta` |
-| rc 阶段  | rc              | `x-y+1-0-beta-*` | 测试通过 | `x-y+1-0`        | `wienx publish minor`                 |
+| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x-y+1-0-beta-*` | `winex publish --beta minor` |
+| rc 阶段  | rc              | `x-y+1-0-beta-*` | 测试通过 | `x-y+1-0`        | `winex publish --release minor`                 |
 
 #### 重构或者做了不向下兼容的功能
 
 | 开发阶段 | 代码分支        | 版本号           | 发布时机 | 发布版本号       | 执行命令                              |
 | -------- | --------------- | ---------------- | -------- | ---------------- | ------------------------------------- |
-| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x+1-0-0-beta-*` | `wienx publish premajor --preid=beta` |
-| rc 阶段  | rc              | `x+1-0-0-beta-*` | 测试通过 | `x+1-0-0`        | `wienx publish major`                 |
+| 开发阶段 | feat_xx_develop | `x-y-z`          | 开发阶段 | `x+1-0-0-beta-*` | `winex publish --beta major` |
+| rc 阶段  | rc              | `x+1-0-0-beta-*` | 测试通过 | `x+1-0-0`        | `winex publish --release major`                 |
 
 ## 使用组件版本
 

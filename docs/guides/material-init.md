@@ -25,13 +25,10 @@
 ├── README.md
 ├── build               //生成的物料数据目录
 ├── components          // 业务组件开发目录
-├── docs                // 物料文档
-├── lerna.json          // lerna配置
+├── docs                // 物料文档目录
+├── lerna.json          // lerna配置(可选)
 ├── package.json        // package.json信息
 ├── scaffolds           // 模板开发目录
-├── scripts
-│   ├── release.js      // 发布脚本
-│   └── upload-minio.js // minio上传脚本
 
 ```
 

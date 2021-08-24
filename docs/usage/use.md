@@ -7,6 +7,7 @@
 ```JavaScript
 // main.js
 import Vue from "vue";
+import  '@winex-comp/common-tag/dist/index.css';
 import Tag from "@winex-comp/common-tag";
 
 Vue.use(Tag);
@@ -26,6 +27,7 @@ new Vue({
 </template>
 <script>
   import Tag from '@winex-comp/common-tag';
+  import  '@winex-comp/common-tag/dist/index.css';
   export default {
     components: {
       Tag

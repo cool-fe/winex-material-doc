@@ -17,7 +17,9 @@ winex init --name <tag> --template <@winex-scaf/common-component>
     ├── CHANGELOG.md      // 日志
     ├── README.md         // 组件描述文档
     ├── index.js          // 组件入口文件
+    |—— index.vue         // 自定义调试物料的入口组件
     ├── index.scss        // 组件样式文件
+    |—— app.js            // 运行时增强app功能
     ├── lib               // 构建产物目录
     ├── package.json      // package.json文件
     ├── src               // 组件目录
@@ -36,15 +38,7 @@ winex init --name <tag> --template <@winex-scaf/common-component>
   "main": "./lib/index.js",
   "repository": "",
   // files 此处需要自己添加
-  "files": ["lib"],
-  // scripts 此处需要自己添加
-  "scripts": {
-    "version": "winex fire build", // 此处脚本命令用version，打包时会走lerna的钩子
-    "start": "winex fire start" // 本地调试
-  },
-  "dependencies": {
-    "@winfe/winex-cli": "^1.1.0" // @winfe/winex-cli前期更新可能比较快，持续关注winex-cli文档
-  },
+  "files": ["lib","dist"],
   // componentConfig 此处需要自己添加
   "componentConfig": {
     "name": "@winex-comp/[域名]-[组件名]", // name是组件名称
@@ -60,9 +54,28 @@ winex init --name <tag> --template <@winex-scaf/common-component>
 :::
 
 ## 开发调试
-### 预览本地组件
-关于组件的本地开发调试，`@winfe/winex-cli`提供了`winex fire start`命令可以进行本地开发调试。详细使用方式请参考[本地调试](/plugins/start.html)
+
+### 本地开发
+
+@winfe/winex-cli 对完提供了一个开发环境依赖的命令`winex dev`。构建于 webpack 和 webpack-dev-server 之上。提供了开箱即用的vue项目[dev开发服务](/plugins/start.html)
+
+#### 安装
+
+```javascript
+// global install
+$ npm install -g @winfe/winex-cli
+# OR
+$ yarn global add @winfe/winex-cli
+```
+
+#### 组件根目录运行
+
+```bash
+winex dev
+```
+
 ### 本地项目调试(link)
+
 可以采用yarn link方式，首先在组件目录执行
 ```bash
 yarn run link
@@ -72,8 +85,7 @@ yarn run link
 yarn link <package name>
 ```
 
-
-### 远程调试
+### 远程项目调试
 
 #### 本地开启dev watch build，开启dev打包，远程项目通过内网ip直接加载
 

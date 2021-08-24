@@ -1,7 +1,7 @@
 # 本地调试
 
 ## 使用方式
-@winfe/winex-cli 对完提供了一个开发环境依赖的命令`winex fire start`。构建于 webpack 和 webpack-dev-server 之上。
+@winfe/winex-cli 对完提供了一个开发环境依赖的命令`winex dev`。构建于 webpack 和 webpack-dev-server 之上。
 
 提供了开箱即用的vue2项目dev开发服务
 
@@ -12,32 +12,20 @@
 $ npm install -g @winfe/winex-cli
 # OR
 $ yarn global add @winfe/winex-cli
-
-// local install
-$ npm install  @winfe/winex-cli --save-dev
-# OR
-$ yarn add @winfe/winex-cli -D
 ```
 
-### 添加script
+### 单个物料根目录运行
 
-```javascript
-{
-    "scripts": {
-      ...
-      "start": "winex fire start",
-    }
-}
+```bash
+winex dev
 ```
 
 ## 配置
 
 ### 项目目录
 
-```
-.
+```json
 ├── package.json
-├── winfe.config.js
 ├── dist
 ├── public
 ├── src
@@ -45,10 +33,14 @@ $ yarn add @winfe/winex-cli -D
         ├── example.vue
         └── example2.vue
     └── index.js
+├── winfe.config.js
 ├── index.js // 对外输出的入口js
+├── index.vue // 如果想自定义调试组件，可以在index.vue中进行
 └── app.js  // 应用级别的配置
-
 ```
+
+
+
 
 ### 应用配置
 
