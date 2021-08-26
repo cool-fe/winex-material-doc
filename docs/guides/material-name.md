@@ -10,7 +10,7 @@
 
 ```javascript
 // component 业务组件
-@winex-comps/encounter-tag
+@winex-comp/encounter-tag
 ```
 
 - 业务组件文件夹名称：按照`短横线分隔 (kebab-case)`进行名。`eg: my-tag`
